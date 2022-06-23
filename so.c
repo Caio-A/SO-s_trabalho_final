@@ -6,7 +6,10 @@
 
 main(){
     int i = 1;
-    int foreing_id_carros = 0;
+
+    int id = 0;
+
+    esvazia_estacionamento(foreing_id_carros);
 
     while(i == 1){
 
@@ -19,11 +22,12 @@ main(){
                 i = 0;
             break;
             case 1:
-                estacionamento[foreing_id_carros].id = set_id(estacionamento, foreing_id_carros);
-                estacionamento[foreing_id_carros].placa = set_placa(estacionamento, foreing_id_carros);
-                estacionamento[foreing_id_carros].ano = set_ano(estacionamento, foreing_id_carros);
-                printf("%d\n", estacionamento[foreing_id_carros].ano);
-                printf("%s", estacionamento[foreing_id_carros].placa);
+                id = verifica_id(id, foreing_id_carros);
+                estacionamento[foreing_id_carros[id]].id = set_id(estacionamento, foreing_id_carros, id);
+                set_placa(estacionamento, foreing_id_carros, id);
+                estacionamento[foreing_id_carros[id]].ano = set_ano(estacionamento, foreing_id_carros, id);
+                printf("ano = %d\n", estacionamento[foreing_id_carros[id]].ano);
+                printf("placa = %s\n", estacionamento[foreing_id_carros[id]].placa);
             break;
             case 2:
                 printf("oi\n");

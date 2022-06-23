@@ -1,5 +1,4 @@
 char linha[100] = "________________________________________________________";
-char vertical = '|';
 
 int printa_menu(int escolha){
         printf("BEM VINDO AO ESTACIONAMENTO EUSTACIO\n");
