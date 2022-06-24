@@ -1,20 +1,20 @@
 #include<stdio.h>
 #include"biblio_setters.h"
 #include"biblio_models.h"
+#include <time.h>
 
 
 
 main(){
     int i = 1;
-
     int id = 0;
 
     esvazia_estacionamento(foreing_id_carros);
 
     while(i == 1){
 
-        int escolha = 1;
-        int menu;
+        int escolha;
+
         escolha = printa_menu(escolha);
         switch(escolha)
         {
@@ -22,12 +22,9 @@ main(){
                 i = 0;
             break;
             case 1:
+                system("CLS");
                 id = verifica_id(id, foreing_id_carros);
-                estacionamento[foreing_id_carros[id]].id = set_id(estacionamento, foreing_id_carros, id);
-                set_placa(estacionamento, foreing_id_carros, id);
-                estacionamento[foreing_id_carros[id]].ano = set_ano(estacionamento, foreing_id_carros, id);
-                printf("ano = %d\n", estacionamento[foreing_id_carros[id]].ano);
-                printf("placa = %s\n", estacionamento[foreing_id_carros[id]].placa);
+                faz_registro(estacionamento,foreing_id_carros,id);
             break;
             case 2:
                 printf("oi\n");
